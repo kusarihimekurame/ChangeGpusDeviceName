@@ -22,6 +22,8 @@ until (
 			[int]$Choice -le 3
 )
 
+Write-Host ""
+
 switch ($Choice)
 {
 	"1" {
