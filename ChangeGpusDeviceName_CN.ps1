@@ -62,6 +62,7 @@ switch ($Choice)
 		if ($SelectedGpu.FriendlyName -eq "NVIDIA GeForce RTX 4090")
 		{
 			Write-Host "检查到已经是N卡, 无需切换"
+			Write-Host ""
 			Read-Host "按回车键关闭"
 			return
 		}
@@ -73,6 +74,7 @@ switch ($Choice)
 			if ([string]::IsNullOrEmpty($CurrentValue))
 			{
 				Write-Host "未找到DeviceDesc值, 无法切换"
+				Write-Host ""
 				Read-Host "按回车键关闭"
 				return
 			}
@@ -92,6 +94,7 @@ switch ($Choice)
 			Write-Host "成功修改显卡驱动DeviceDesc值为`"NVIDIA GeForce RTX 4090`""
 			Write-Host "原来的显卡驱动的DeviceDesc值`"$CurrentValue`"已经备份到DeviceDesc_Backup中"
 			Write-Host "需要重新启动电脑才能生效"
+			Write-Host ""
 			Read-Host "按回车键关闭"
 			return
 		}
@@ -108,6 +111,7 @@ switch ($Choice)
 		{
 			Write-Host ""
 			Write-Host "未检测到切换后的N卡, 此脚本切换后的显卡名称固定为`"NVIDIA GeForce RTX 4090`""
+			Write-Host ""
 			Read-Host "按回车键关闭"
 			return
 		}
@@ -119,6 +123,7 @@ switch ($Choice)
 			if ([string]::IsNullOrEmpty($BackupValue))
 			{
 				Write-Host "未找到备份值，无法恢复"
+				Write-Host ""
 				Read-Host "按回车键关闭"
 				return
 			}
@@ -128,6 +133,7 @@ switch ($Choice)
 			Write-Host ""
 			Write-Host "已恢复：$BackupValue"
 			Write-Host "需要重启电脑才能生效"
+			Write-Host ""
 			Read-Host "按回车键关闭"
 
 			return
