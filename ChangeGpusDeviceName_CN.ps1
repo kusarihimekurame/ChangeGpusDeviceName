@@ -61,7 +61,7 @@ switch ($Choice)
 		{
 			Write-Host "检查到已经是N卡, 无需切换"
 			Read-Host "按回车键关闭"
-			exit
+			return
 		}
 		else
 		{
@@ -72,7 +72,7 @@ switch ($Choice)
 			{
 				Write-Host "未找到DeviceDesc值, 无法切换"
 				Read-Host "按回车键关闭"
-				exit
+				return
 			}
 
 			New-ItemProperty `
@@ -91,7 +91,7 @@ switch ($Choice)
 			Write-Host "原来的显卡驱动的DeviceDesc值`"$CurrentValue`"已经备份到DeviceDesc_Backup中"
 			Write-Host "需要重新启动电脑才能生效"
 			Read-Host "按回车键关闭"
-			exit
+			return
 		}
 	}
 
@@ -107,7 +107,7 @@ switch ($Choice)
 			Write-Host ""
 			Write-Host "未检测到切换后的N卡, 此脚本切换后的显卡名称固定为`"NVIDIA GeForce RTX 4090`""
 			Read-Host "按回车键关闭"
-			exit
+			return
 		}
 		else
 		{
@@ -118,7 +118,7 @@ switch ($Choice)
 			{
 				Write-Host "未找到备份值，无法恢复"
 				Read-Host "按回车键关闭"
-				exit
+				return
 			}
 
 			Set-ItemProperty -Path $RegPath -Name DeviceDesc -Value $BackupValue
@@ -128,12 +128,12 @@ switch ($Choice)
 			Write-Host "需要重启电脑才能生效"
 			Read-Host "按回车键关闭"
 
-			exit
+			return
 		}
 	}
 
 	"3" {
 		Write-Host "已退出"
-		exit
+		return
 	}
 }
