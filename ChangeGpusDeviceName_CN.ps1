@@ -1,13 +1,3 @@
-﻿$currentIdentity = [Security.Principal.WindowsIdentity]::GetCurrent()
-$principal = New-Object Security.Principal.WindowsPrincipal($currentIdentity)
-
-if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
-{
-    Write-Host "请以管理员身份运行此脚本"
-    Read-Host "按回车键关闭"
-    exit
-}
-
 Write-Host ""
 Write-Host "此脚本是通过修改注册表来切换显卡驱动名字, 让A卡伪装成N卡" 
 Write-Host "能让A卡在绝区零v3.0中开启光追"
