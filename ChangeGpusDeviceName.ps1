@@ -63,7 +63,7 @@ switch ($Choice)
 		{
 			Write-Host "The selected GPU is already set as NVIDIA. No changes are required."
 			Read-Host "Press Enter to exit"
-			exit
+			return
 		}
 		else
 		{
@@ -74,7 +74,7 @@ switch ($Choice)
 			{
 				Write-Host "DeviceDesc was not found. Unable to continue."
 				Read-Host "Press Enter to exit"
-				exit
+				return
 			}
 
 			New-ItemProperty `
@@ -93,7 +93,7 @@ switch ($Choice)
 			Write-Host "Original DeviceDesc value `"$CurrentValue`" has been backed up to DeviceDesc_Backup."
 			Write-Host "A system restart is required for the change to take effect."
 			Read-Host "Press Enter to exit"
-			exit
+			return
 		}
 	}
 
@@ -110,7 +110,7 @@ switch ($Choice)
 			Write-Host "No GPU named `"NVIDIA GeForce RTX 4090`" was found."
 			Write-Host "This script only restores GPUs previously modified by this tool."
 			Read-Host "Press Enter to exit"
-			exit
+			return
 		}
 		else
 		{
@@ -121,7 +121,7 @@ switch ($Choice)
 			{
 				Write-Host "DeviceDesc_Backup was not found. Unable to restore."
 				Read-Host "Press Enter to exit"
-				exit
+				return
 			}
 
 			Set-ItemProperty -Path $RegPath -Name DeviceDesc -Value $BackupValue
@@ -131,12 +131,12 @@ switch ($Choice)
 			Write-Host "A system restart is required for the change to take effect."
 			Read-Host "Press Enter to exit"
 
-			exit
+			return
 		}
 	}
 
 	"3" {
 		Write-Host "Exiting..."
-		exit
+		return
 	}
 }
