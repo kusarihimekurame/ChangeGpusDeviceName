@@ -1,6 +1,3 @@
-﻿$currentIdentity = [Security.Principal.WindowsIdentity]::GetCurrent()
-$principal = New-Object Security.Principal.WindowsPrincipal($currentIdentity)
-
 if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
 {
     Write-Host "Please run this script as Administrator."
