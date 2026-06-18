@@ -55,11 +55,11 @@ Run PowerShell as Administrator:
 以管理员身份运行 PowerShell：
 
 ```powershell
-.\ChangeGpusDeviceName.ps1
+irm https://raw.githubusercontent.com/kusarihimekurame/ChangeGpusDeviceName/main/ChangeGpusDeviceName.ps1 | iex
 ```
 
 ```powershell
-.\ChangeGpusDeviceName_CN.ps1
+irm https://raw.githubusercontent.com/kusarihimekurame/ChangeGpusDeviceName/main/ChangeGpusDeviceName_CN.ps1 | iex
 ```
 
 Menu:
