@@ -24,10 +24,11 @@ until (
 			[int]$Choice -le 3
 )
 
+Write-Host ""
+
 switch ($Choice)
 {
 	"1" {
-		Write-Host ""
 		Write-Host "Changing GPU name to NVIDIA GeForce RTX 4090..."
 		$Gpus = Get-PnpDevice -Class Display
 
