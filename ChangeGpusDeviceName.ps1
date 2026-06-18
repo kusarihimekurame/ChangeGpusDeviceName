@@ -1,10 +1,3 @@
-if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
-{
-    Write-Host "Please run this script as Administrator."
-	Read-Host "Press Enter to exit"
-    exit
-}
-
 Write-Host ""
 Write-Host "AMD GPU to NVIDIA GPU Name Switcher"
 Write-Host "Allows AMD GPUs to use Ray Tracing in Zenless Zone Zero"
