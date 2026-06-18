@@ -64,6 +64,7 @@ switch ($Choice)
 		if ($SelectedGpu.FriendlyName -eq "NVIDIA GeForce RTX 4090")
 		{
 			Write-Host "The selected GPU is already set as NVIDIA. No changes are required."
+			Write-Host ""
 			Read-Host "Press Enter to exit"
 			return
 		}
@@ -75,6 +76,7 @@ switch ($Choice)
 			if ([string]::IsNullOrEmpty($CurrentValue))
 			{
 				Write-Host "DeviceDesc was not found. Unable to continue."
+				Write-Host ""
 				Read-Host "Press Enter to exit"
 				return
 			}
@@ -94,6 +96,7 @@ switch ($Choice)
 			Write-Host "Successfully changed DeviceDesc to `"NVIDIA GeForce RTX 4090`""
 			Write-Host "Original DeviceDesc value `"$CurrentValue`" has been backed up to DeviceDesc_Backup."
 			Write-Host "A system restart is required for the change to take effect."
+			Write-Host ""
 			Read-Host "Press Enter to exit"
 			return
 		}
@@ -111,6 +114,7 @@ switch ($Choice)
 			Write-Host ""
 			Write-Host "No GPU named `"NVIDIA GeForce RTX 4090`" was found."
 			Write-Host "This script only restores GPUs previously modified by this tool."
+			Write-Host ""
 			Read-Host "Press Enter to exit"
 			return
 		}
@@ -122,6 +126,7 @@ switch ($Choice)
 			if ([string]::IsNullOrEmpty($BackupValue))
 			{
 				Write-Host "DeviceDesc_Backup was not found. Unable to restore."
+				Write-Host ""
 				Read-Host "Press Enter to exit"
 				return
 			}
@@ -131,6 +136,7 @@ switch ($Choice)
 			Write-Host ""
 			Write-Host "Successfully restored: $BackupValue"
 			Write-Host "A system restart is required for the change to take effect."
+			Write-Host ""
 			Read-Host "Press Enter to exit"
 
 			return
